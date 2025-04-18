@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#120078" />
+      <stop offset="100%" stop-color="#892cdc" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+
+  <!-- Laptop -->
+  <g filter="url(#glow)">
+    <rect x="150" y="220" width="300" height="140" rx="8" ry="8" fill="#111" />
+    <rect x="160" y="230" width="280" height="90" fill="#0a0a0a" />
+    <!-- Code on screen -->
+    <text x="170" y="255" font-family="monospace" font-size="14" fill="#39ff14">
+      <tspan x="170" dy="1.2em">for (let i = 0; i &lt; 10; i++) {</tspan>
+      <tspan x="170" dy="1.2em">  console.log("✨ Neon code ✨");</tspan>
+      <tspan x="170" dy="1.2em">}</tspan>
+    </text>
+    <!-- Keyboard -->
+    <rect x="155" y="340" width="290" height="10" fill="#222" />
+    <line x1="155" y1="350" x2="445" y2="350" stroke="#333" stroke-width="2" />
+  </g>
+
+  <!-- Panda Head -->
+  <g filter="url(#glow)">
+    <circle cx="300" cy="140" r="60" fill="#fff" stroke="#39ff14" stroke-width="4" />
+    <!-- Ears -->
+    <circle cx="245" cy="90" r="20" fill="#000" />
+    <circle cx="355" cy="90" r="20" fill="#000" />
+    <!-- Eye Patches -->
+    <ellipse cx="275" cy="140" rx="18" ry="24" fill="#000" />
+    <ellipse cx="325" cy="140" rx="18" ry="24" fill="#000" />
+    <!-- Eyes -->
+    <circle cx="275" cy="140" r="8" fill="#39ff14" />
+    <circle cx="325" cy="140" r="8" fill="#39ff14" />
+    <!-- Nose -->
+    <path d="M295 160 Q300 168 305 160" stroke="#000" stroke-width="2" fill="none" />
+    <!-- Mouth -->
+    <path d="M295 170 Q300 175 305 170" stroke="#000" stroke-width="2" fill="none" />
+  </g>
+</svg>
+
