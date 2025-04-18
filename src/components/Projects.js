@@ -1,13 +1,25 @@
 const projects = [
   {
+    title: "Quest Odyssey",
+    description: "A TTRPG Scheduling Application that allows users to create, join, organise and track sessions of their own table-top campaigns with other players ",
+    link: "https://github.com/RooOliver-Weaver/quest_odyssey",
+    status: "complete"
+  },
+  {
+    title: "Villanous Villas",
+    description: "A themed rental platform that allows users to browse and book villain-inspired hideouts. A fanciful spin on your standard AirBnB clone.  Built with Ruby on Rails, JavaScript, and StimulusJS, it features dynamic property listings, a seamless booking system, and an intuitive UI for both guests and hosts.",
+    link: "https://github.com/RooOliver-Weaver/quest_odyssey",
+    status: "complete"
+  },
+  {
     title: "Dialectic Journal",
     description: "An AI-assisted note-taking tool built with Rails and PostgreSQL.",
-    link: "https://github.com/yourusername/dialectic-journal"
+    link: "https://github.com/roshanabey2/dialectic-journal"
   },
   {
     title: "Elements of Eloquence",
-    description: "A React Native app for improving prose and writing clarity.",
-    link: "https://github.com/yourusername/elements-of-eloquence"
+    description: "An AI-assisted tool used to gradually improve clarity of prose of the user.Built with Ruby on Rails backend and a react front end.",
+    link: "https://github.com/roshanabey2/elements-of-eloquence"
   }
 ];
 
