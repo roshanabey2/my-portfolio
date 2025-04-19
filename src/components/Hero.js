@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-row justify-center items-center text-left p-6">
+    <section className="min-h-screen flex flex-row justify-center items-center text-left p-6 m-10">
       <div className="flex flex-col justify-start p-3">
         <h1 className="component_name text-5xl font-bold mb-4">Hi, I'm Roshan</h1>
         <p className="text-xl text-[#ff007c]">
