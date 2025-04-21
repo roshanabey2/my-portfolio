@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.scss";
 import Navbar from '../components/Navbar'; // or wherever it's located
 import { MatrixBackground } from "@/components/MatrixBackground";
 

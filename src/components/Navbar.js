@@ -1,13 +1,20 @@
 'use client'
 // required if you’re using client-side interactivity
-
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Navbar = () => {
   return (
-    <nav className="bg-[#737aa2] text-white p-4 shadow-md">
+    <nav className="bg-[#150964] text-white p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-[#c3e88d] text-xl font-bold">Roshan.dev</div>
+        <Image
+          src="/panda_icon.jpg"
+          alt="icon"
+          width={70}
+          height={70}
+          className="rounded-full"
+        />
+
         <ul className="flex space-x-6">
           <li>
             <Link href="/" className="hover:text-blue-400">Home</Link>
