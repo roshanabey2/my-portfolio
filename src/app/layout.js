@@ -5,7 +5,7 @@ import { MatrixBackground } from "@/components/MatrixBackground";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="relative">
+      <body>
         <MatrixBackground
           textColour={"#9d7cd8"}
           backgroundColour={"var(--color-background)"}
@@ -14,8 +14,9 @@ export default function RootLayout({ children }) {
           textColumnWidth={20}
           fps={20}
         />
+        <div className="scanlines"></div>
 
-        <Navbar />
+        <Navbar className="relative z-20" />
 
         <main>{children}</main>
       </body>
