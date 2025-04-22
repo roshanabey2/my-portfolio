@@ -1,36 +1,43 @@
 'use client'
-// required if you’re using client-side interactivity
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import '../app/navbar.css'
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleNav = () => setIsOpen(prev => !prev)
   return (
-    <nav className="bg-[#150964] text-white p-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        <Image
-          src="/panda_icon.jpg"
-          alt="icon"
-          width={70}
-          height={70}
-          className="rounded-full"
-        />
-
-        <ul className="flex space-x-6">
-          <li>
-            <Link href="/" className="hover:text-blue-400">Home</Link>
-          </li>
-          <li>
-            <Link href="/about" className="hover:text-blue-400">About Me</Link>
-          </li>
-          <li>
-            <Link href="/writings" className="hover:text-blue-400">Writings</Link>
-          </li>
-          <li>
-            <Link href="/links" className="hover:text-blue-400">Links</Link>
-          </li>
-        </ul>
+    <>
+      <div className="navbar-icon hover:grayscale-10 hover:brightness-75" onClick={toggleNav}>  <Image
+        src="/panda_icon.jpg"
+        alt="icon"
+        width={35}
+        height={35}
+        className="rounded-full"
+      />
       </div>
-    </nav>
+      <nav className={`navbar ${isOpen ? 'open' : ''}`} >
+        <div className="flex justify-end items-center mx-5">
+
+
+          <ul className="flex space-x-6">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About Me</Link>
+            </li>
+            <li>
+              <Link href="/writings">Writings</Link>
+            </li>
+            <li>
+              <Link href="/links">Links</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 };
 

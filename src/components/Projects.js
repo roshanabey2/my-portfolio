@@ -28,10 +28,10 @@ const Projects = () => (
     <h2 className="text-3xl font-bold mb-4 text-center component_name">Projects</h2>
     <div className="grid gap-6 md:grid-cols-2">
       {projects.map((proj) => (
-        <div key={proj.title} className="bg-[#292e42] p-4 rounded-lg shadow">
-          <h3 className="text-[#ff007c] text-xl font-semibold">{proj.title}</h3>
-          <p className="text-[#41a6b5]">{proj.description}</p>
-          <a href={proj.link} className="text-[#9d7cd8] hover:underline mt-2 inline-block">View on GitHub</a>
+        <div key={proj.title} className="bg-[#545c7e] p-4 rounded-lg shadow z-999">
+          <h3 className="text-[#ff757f] text-xl font-semibold">{proj.title}</h3>
+          <p className="info_text">{proj.description}</p>
+          <a href={proj.link} className="text-[#7dcfff] hover:underline mt-2 inline-block">  View on GitHub</a>
         </div>
       ))}
     </div>

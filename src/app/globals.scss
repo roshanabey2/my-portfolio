@@ -38,6 +38,13 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: 'Cartesian';
+  src: url('/fonts/Cartesian-4B576.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -72,10 +79,17 @@ body {
 
 .component_name {
   color: #ff9e64;
+  font-family: 'Cartesian';
+}
+
+.info_text {
+  color: #4fd6be;
+  font-size: 1vw;
+  letter-spacing: 0.25em;
 }
 
 .glitch {
-  color: #ff9e64; 
+  color: #ff9e64;
   position: relative;
   font-size: 9vw;
   font-family: 'Techno-Charm';
@@ -182,7 +196,7 @@ body {
 .subtitle {
   font-family: 'Hurmit-Nerd', monospace;
   font-weight: bold;
-  font-size: 1vw;
+  font-size: 1.2vw;
   color: #ff007c;
   text-transform: uppercase;
   letter-spacing: 0.5em;
