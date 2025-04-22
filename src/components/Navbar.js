@@ -1,15 +1,48 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import '../app/navbar.css'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleNav = () => setIsOpen(prev => !prev)
+
+
+  // Keep the ref in sync with state
+
+  // open the nav 1s after mount
+  useEffect(() => {
+    const timeoutId = setTimeout(() => setIsOpen(true), 800)
+    return () => clearTimeout(timeoutId)
+  }, [])
+
+  // close nav when scrolled past 20%
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollFraction = docHeight > 0 ? scrollTop / docHeight : 0;
+
+      if (scrollFraction >= 0.2 && isOpen) {
+        setIsOpen(false)
+      } else if ((scrollFraction <= 0.1) && !isOpen) {
+        setIsOpen(true)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // in case you're already past 20% on mount
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [isOpen])
+
+
+
   return (
     <>
-      <div className="navbar-icon hover:grayscale-10 hover:brightness-75" onClick={toggleNav}>  <Image
+      <div className="navbar-icon hover:grayscale-10 hover:brightness-75" onClick={() => setIsOpen(open => !open)} >  <Image
         src="/panda_icon.jpg"
         alt="icon"
         width={35}
