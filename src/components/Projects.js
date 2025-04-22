@@ -1,3 +1,6 @@
+import ImageGlow from 'react-image-glow';
+
+
 const projects = [
   {
     title: "Quest Odyssey",
@@ -25,13 +28,20 @@ const projects = [
 
 const Projects = () => (
   <section className="p-6">
-    <h2 className="text-3xl font-bold mb-4 text-center component_name">Projects</h2>
+    <h2 className="text-4xl font-bold mb-4 text-center component_name">Projects</h2>
     <div className="grid gap-6 md:grid-cols-2">
       {projects.map((proj) => (
-        <div key={proj.title} className="bg-[#545c7e] p-4 rounded-lg shadow z-999">
-          <h3 className="text-[#ff757f] text-xl font-semibold">{proj.title}</h3>
+        <div key={proj.title} className="bg-[#545c7e] flex flex-col p-4 rounded-lg shadow z-999 opacity-75">
+          <h3 className="text-[#bb9af7] text-xl font-bold">{proj.title}</h3>
+          <ImageGlow
+            radius={20}
+            saturation={1.5}
+            opacity={0.9}
+            className="relative w-full h-full items-center overflow-hidden bg-[#24283b] rounded-3xl ">
+            <img />
+          </ImageGlow>
           <p className="info_text">{proj.description}</p>
-          <a href={proj.link} className="text-[#7dcfff] hover:underline mt-2 inline-block">  View on GitHub</a>
+          <a href={proj.link} className="text-[#7dcfff] hover:text-[#ff007c] mt-auto inline-block">  View on GitHub</a>
         </div>
       ))}
     </div>
