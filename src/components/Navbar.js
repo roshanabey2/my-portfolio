@@ -3,9 +3,11 @@ import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import '../app/navbar.css'
+import { useMode } from "@/context/ModeContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { mode } = useMode();
 
 
   // Keep the ref in sync with state
