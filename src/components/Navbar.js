@@ -42,14 +42,15 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar-icon hover:grayscale-10 hover:brightness-75" onClick={() => setIsOpen(open => !open)} >  <Image
+      <Image
+        className={`navbar-icon hover:grayscale-10 hover:brightness-75 rounded-full ${isOpen ? 'open' : ''}`}
+        onClick={() => setIsOpen(open => !open)}
         src="/panda_icon.jpg"
         alt="icon"
         width={35}
         height={35}
-        className="rounded-full"
+
       />
-      </div>
       <nav className={`navbar ${isOpen ? 'open' : ''}`} >
         <div className="flex justify-end items-center mx-5">
 

@@ -5,9 +5,14 @@
   cursor: pointer;
   z-index: 1000;
   background: #150964;
-  padding: 4px;
+  padding: 2px;
   border-radius: 50%;
   transition: left 0.3s ease, right 0.3s ease;
+}
+
+.navbar-icon.open {
+  background: #394b70;
+  opacity: 0.75;
 }
 .navbar {
   position: fixed;
@@ -19,7 +24,7 @@
   background: #394b70;
   border-radius: 6px;
   opacity: 0.85;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
   font-size: 1vw;
 
   /* animate both sliding & height */
@@ -32,7 +37,7 @@
 .navbar.open {
   height: 50px;
   max-height: 500px;   /* slide‐down height */
-  transform: translateX(0);  /* slide in from left */
+  transform: translateY(0);  /* slide in from left */
 }
 
 .navbar ul {
