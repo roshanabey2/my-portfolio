@@ -88,7 +88,7 @@ background: var(--background-minimal);
 
 .component_name.minimal {
   color: #a98467;
-  font-family: 'Goudy';
+  font-family: 'Goudy Bookletter';
 }
 
 .info_text.showcase {
@@ -98,8 +98,8 @@ background: var(--background-minimal);
 }
 
 .info_text.minimal {
-  color: #B1E9F9;
-  font-size: 1vw;
+  color: 	#2E2C2A;
+  font-size: 2vw;
   letter-spacing: 0.15em;
 }
 
@@ -208,7 +208,7 @@ background: var(--background-minimal);
   top: 0;
 }
 
-.subtitle {
+.subtitle.showcase {
   font-family: 'Hurmit-Nerd', monospace;
   font-weight: bold;
   font-size: 1.2vw;
@@ -217,6 +217,16 @@ background: var(--background-minimal);
   letter-spacing: 0.5em;
   left: 17%;
   animation: glitch-2 5s 5.02s infinite;
+}
+
+.subtitle.minimal {
+  font-family: 'EB Garamond', serif;
+  font-weight: bold;
+  font-size: 1.2vw;
+  color: 	#6E7B58;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  left: 17%; 
 }
 
 @keyframes glitch-2 {

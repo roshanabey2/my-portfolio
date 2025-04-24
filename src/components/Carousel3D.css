@@ -17,8 +17,6 @@
 
 .carousel-item {
   position: absolute;
-  width: 200px;
-  padding: 20px;
   border-radius: 12px;
   background: #eee;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);

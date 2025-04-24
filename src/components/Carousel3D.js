@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './Carousel3D.css';
+import Image from 'next/image';
 
-const modes = ['Minimal', 'Showcase', 'Dark'];
+const modes = ['minimal', 'showcase', 'dark'];
 
 export default function Carousel3D({ onSelect }) {
   const [index, setIndex] = useState(1); // Start with Showcase
@@ -22,8 +23,19 @@ export default function Carousel3D({ onSelect }) {
           const offset = i - index;
           const transform = `rotateY(${offset * 40}deg) translateZ(${offset === 0 ? 200 : 150}px)`;
           return (
-            <div key={mode} className={`carousel-item ${offset === 0 ? 'active' : ''}`} style={{ transform }}>
-              {mode}
+            <div key={mode} className={` flex carousel-item ${offset === 0 ? 'active' : ''}`} style={{ transform }}>
+              <Image
+                src={
+                  mode === "minimal"
+                    ? "/minimal__panda_icon.png"
+                    : mode === "showcase"
+                      ? "/showcase_panda_icon.jpg"
+                      : "/dark_panda_icon.png"}
+                alt={`${mode} mode `}
+                width={85}
+                height={85}
+              />
+
             </div>
           );
         })}

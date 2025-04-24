@@ -10,11 +10,12 @@ const Hero = () => {
         <div className={`${mode !== 'showcase' ? 'hidden' : ''}`}>
           <div className="glitch" data-text="Roshan Abeysekera" >Roshan Abeysekera </div>
           <div className="glow">Roshan Abeysekera</div>
-          <div className="subtitle">
-            Full-Stack Developer and Software Engineer | Portfolio 2025
-          </div>
         </div>
-        <div className="info_text mt-6">
+        <div className={`subtitle ${mode} `}>
+          Full-Stack Developer and Software Engineer | Portfolio 2025
+        </div>
+
+        <div className={`info_text ${mode} mt-6`}>
           I build thoughtful software with an eye for performance and clarity. Currently tinkering with AI-assisted tools and low-level systems.
         </div>
       </div>

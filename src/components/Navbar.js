@@ -47,7 +47,12 @@ const Navbar = () => {
       <Image
         className={`navbar-icon hover:grayscale-10 hover:brightness-75 rounded-full ${isOpen ? 'open' : ''}`}
         onClick={() => setIsOpen(open => !open)}
-        src="/panda_icon.jpg"
+        src={
+          mode === "minimal"
+            ? "/minimal__panda_icon.png"
+            : mode === "showcase"
+              ? "/showcase_panda_icon.jpg"
+              : "/dark_panda_icon.png"}
         alt="icon"
         width={35}
         height={35}

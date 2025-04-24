@@ -9,9 +9,9 @@ import SplashPage from "@/components/SplahPage";
 
 
 export default function Home() {
-  const { mode } = useMode();
+  const { mode, isLoading } = useMode();
 
-  if (!mode) {
+  if (isLoading || !mode) {
     return <SplashPage />;
   }
 
