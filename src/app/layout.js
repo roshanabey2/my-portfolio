@@ -19,10 +19,12 @@ function AppLayout({ children }) {
           fps={20}
         />
       )}
-      <div className="scanlines"></div>
-      {mode && (
-        <Navbar className="relative z-20" />
+      {(mode === null || mode === 'showcase') && (
+        <div className="scanlines"></div>
       )}
+
+
+      <Navbar className="relative z-20" />
       <main>{children}</main>
     </body>
   );

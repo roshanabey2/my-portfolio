@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
 
 :root {
   --background-showcase: #24283b;
@@ -62,6 +63,14 @@
   }
 }
 
+body {
+  background: #d0d058;
+  color: #405010;
+  font-family: 'Doto', monospace;
+  font-weight: bold;
+  position: relative;
+}
+
 body.showcase {
   background: var(--background-showcase);
   color: var(--foreground-showcase);
@@ -73,6 +82,7 @@ body.minimal {
 background: var(--background-minimal);
   color: var(--foreground-minimal);
   font-family: 'EB Garamond', serif;
+  font-weight: normal;
   position: relative;
 }
 
