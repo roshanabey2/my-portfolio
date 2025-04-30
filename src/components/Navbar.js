@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import '../app/navbar.css'
+import './navbar.css'
 import { useMode } from "@/context/ModeContext";
 
 const Navbar = () => {
@@ -58,7 +58,7 @@ const Navbar = () => {
         height={35}
 
       />
-      <nav className={`navbar ${isOpen ? 'open' : ''}`} >
+      <nav className={`navbar ${mode} ${isOpen ? 'open' : ''}`} >
         <div className="flex justify-end items-center mx-5">
 
 

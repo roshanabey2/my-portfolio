@@ -1,6 +1,7 @@
 'use client';
 import { useMode } from "@/context/ModeContext";
 import Carousel3D from "./Carousel3D"; // or whatever visual you end up using
+import "../app/globals.scss";
 
 export default function SplashPage() {
   const { setMode } = useMode();
@@ -13,6 +14,8 @@ export default function SplashPage() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Carousel3D onSelect={handleSelect} />
+      <div className="scanlines">
+      </div>
     </div>
   );
 }

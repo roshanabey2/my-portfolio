@@ -24,7 +24,9 @@ function AppLayout({ children }) {
       )}
 
 
+      {mode && (
       <Navbar className="relative z-20" />
+      )}
       <main>{children}</main>
     </body>
   );
