@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Carousel3D.css';
 import Image from 'next/image';
 
-const modes = ['minimal', 'showcase', 'dark'];
+const modes = ['showcase', 'minimal', 'dark'];
 
 export default function Carousel3D({ onSelect }) {
   const [index, setIndex] = useState(1); // Start with Showcase
@@ -17,7 +17,7 @@ export default function Carousel3D({ onSelect }) {
 
   return (
     <div className="carousel-3d-container">
-      <h1>Welcome to My Portfolio</h1>
+      <h1 className="text-3xl">Welcome to My Portfolio</h1>
       <div className="carousel-3d">
         {modes.map((mode, i) => {
           const offset = i - index;
