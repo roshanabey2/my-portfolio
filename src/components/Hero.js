@@ -36,7 +36,7 @@ const Hero = () => {
             opacity={0.9}
             className="relative w-full h-full items-center overflow-hidden bg-[#24283b] rounded-3xl ">
             <img
-              src="/showcase_coding_panda.png"
+              src="/avatarsAndIcons/avatars/showcase_coding_panda.png"
               alt="My Logo"
               width={300}
               height={600}
@@ -60,7 +60,7 @@ const Hero = () => {
           <Image
             opacity={0.9}
             className="relative w-full h-full items-center overflow-hidden bg-[#24283b] rounded-3xl "
-            src="/minimal_coding_panda.png"
+            src="/avatarsAndIcons/avatars/minimal_coding_panda.png"
               alt="My Logo"
               width={300}
               height={900}

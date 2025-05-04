@@ -27,10 +27,10 @@ export default function Carousel3D({ onSelect }) {
               <Image
                 src={
                   mode === "minimal"
-                    ? "/minimal_panda_icon.png"
+                    ? "/avatarsAndIcons/icons/minimal_panda_icon.png"
                     : mode === "showcase"
-                      ? "/showcase_panda_icon.png"
-                      : "/dark_panda_icon.png"}
+                      ? "/avatarsAndIcons/icons/showcase_panda_icon.png"
+                      : "/avatarsAndIcons/icons/dark_panda_icon.png"}
                 alt={`${mode} mode `}
                 width={85}
                 height={85}
