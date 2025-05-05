@@ -15,7 +15,7 @@ const Projects = () => {
       <div className="grid gap-6 md:grid-cols-2">
         {PROJECTS.map((proj) => (
           <div key={proj.title} className="bg-[#545c7e] flex flex-col p-4 rounded-lg shadow z-999 opacity-75">
-            <h3 className="text-[#bb9af7] text-xl font-bold">{proj.title}</h3>
+            <h3 className="text-[#bb9af7] text-xl font-bold mb-3">{proj.title}</h3>
 
             <div className="embla" ref={emblaRef}>
               <div className="embla__container">
@@ -26,13 +26,14 @@ const Projects = () => {
                       alt={`Project image: ${key}`}
                       width={800}
                       height={600}
+                      className='rounded-lg opacity-90'
                     />
                   </div>
                 ))}
               </div>
             </div>
 
-            <p className={`info_text ${mode}`}>{proj.description}</p>
+            <p className={`info_text mt-3 ${mode}`}>{proj.description}</p>
             <a
               href={proj.link}
               className="text-[#7dcfff] hover:text-[#ff007c] mt-auto inline-block"
