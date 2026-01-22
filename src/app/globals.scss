@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,47 +22,46 @@
 
 :root {
   --background-showcase: #24283b;
-  --foreground-showcase: #3b4261;
-  --background-minimal:  #F0EAD2;
-  --foreground-minimal: #ADC178;
-  --font-hurmit-nerd: 'Hurmit-Nerd';
-  --font-shuretech: 'ShureTech-Mono';
+  --foreground-showcase: #989fab;
+  --background-minimal: #f0ead2;
+  --foreground-minimal: #8a5524;
+  --font-hurmit-nerd: "Hurmit-Nerd";
+  --font-minimal: "EB Garamond", "Hurmit-Nerd", system-ui, serif;
+  --font-shuretech: "ShureTech-Mono";
   --font-dynamic-colour: #9d7cd8;
 }
 
 @font-face {
-  font-family: 'Hurmit-Nerd';
-  src: url('/fonts/HurmitNerdFontMono_Regular.otf') format('otf');
+  font-family: "Hurmit-Nerd";
+  src: url("/fonts/HurmitNerdFontMono-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ShureTech-Mono';
-  src: url('/fonts/ShureTechMonoNerdFontMono-Regular.ttf') format('truetype');
+  font-family: "ShureTech-Mono";
+  src: url("/fonts/ShureTechMonoNerdFontMono-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Moetya';
-  src: url('/fonts/Moetya.ttf') format('truetype');
+  font-family: "Moetya";
+  src: url("/fonts/Moetya.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-
-
 
 @font-face {
-  font-family: 'Techno-Charm';
-  src: url('/fonts/TechnoCharmDemoVersionRegular-ALaZm.otf') format('truetype');
+  font-family: "Techno-Charm";
+  src: url("/fonts/TechnoCharmDemoVersionRegular-ALaZm.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face{
-  font-family: 'Cartesian';
-  src: url('/fonts/Cartesian-4B576.ttf') format('truetype');
+@font-face {
+  font-family: "Cartesian";
+  src: url("/fonts/Cartesian-4B576.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -78,19 +77,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-hurmit-nerd);
-  --font-mono: var(--font-hurmit-nerd);
-  --font-matrix: var(--font-shuretech);
-  --font-matrix-colour: var(--font-dynamic-color);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-hurmit-nerd);
+    --font-mono: var(--font-hurmit-nerd);
+    --font-matrix: var(--font-shuretech);
+    --font-matrix-colour: var(--font-dynamic-color);
   }
 }
 
 body {
   background: #d0d058;
   color: #405010;
-  font-family: 'Doto', monospace;
+  font-family: "Doto", monospace;
   font-weight: bold;
   position: relative;
 }
@@ -98,31 +97,31 @@ body {
 body.showcase {
   background: var(--background-showcase);
   color: var(--foreground-showcase);
-  font-family: 'Hurmit-Nerd', monospace;
+  font-family: "Hurmit-Nerd", monospace;
   position: relative;
 }
 
 body.minimal {
-background: var(--background-minimal);
+  background: var(--background-minimal);
   color: var(--foreground-minimal);
-  font-family: 'EB Garamond', 'Hurmit-Nerd', serif;
+  font-family: var(--font-minimal);
   font-weight: normal;
   position: relative;
 }
 
 /* Then you can use it in a selector: */
 .my-monospace.showcase {
-  font-family: 'Hurmit-Nerd', monospace;
+  font-family: "Hurmit-Nerd", monospace;
 }
 
 .component_name.showcase {
   color: #ff9e64;
-  font-family: 'Cartesian';
+  font-family: "Cartesian";
 }
 
 .component_name.minimal {
-  color: #ADC178;
-  font-family: 'Moetya';
+  color: #adc178;
+  font-family: "Moetya";
 }
 
 .info_text.showcase {
@@ -132,16 +131,30 @@ background: var(--background-minimal);
 }
 
 .info_text.minimal {
-  color: 	#2E2C2A;
-  font-size: 2vw;
-  letter-spacing: 0.15em;
+  color: #2e2c2a;
+  font-size: 1vw;
+  letter-spacing: 0.1em;
+}
+
+.links.showcase {
+  color: #7dcfff;
+  &:hover {
+    color: #ff007c;
+  }
+}
+
+.links.minimal {
+  color: #1b998b;
+  &:hover {
+    color: #de7b30;
+  }
 }
 
 .glitch {
   color: #ff9e64;
   position: relative;
   font-size: 9vw;
-  font-family: 'Techno-Charm';
+  font-family: "Techno-Charm";
   margin: 1.4vw 1vw;
   animation: glitch 5s 5s infinite;
 }
@@ -154,7 +167,9 @@ background: var(--background-minimal);
   background: transparent;
   overflow: hidden;
   top: 0;
-  animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+  animation:
+    noise-1 3s linear infinite alternate-reverse,
+    glitch 5s 5.05s infinite;
 }
 
 .glitch::after {
@@ -165,14 +180,16 @@ background: var(--background-minimal);
   background: transparent;
   overflow: hidden;
   top: 0;
-  animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+  animation:
+    noise-2 3s linear infinite alternate-reverse,
+    glitch 5s 5s infinite;
 }
 
 @keyframes glitch {
-  1%{
+  1% {
     transform: rotateX(10deg) skewX(90deg);
   }
-  2%{
+  2% {
     transform: rotateX(0deg) skewX(0deg);
   }
 }
@@ -216,14 +233,13 @@ background: var(--background-minimal);
   background: repeating-linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(255, 255, 255, 0.05) .5%,
+    rgba(255, 255, 255, 0.05) 0.5%,
     transparent 1%
   );
 
   animation: fudge 7s ease-in-out alternate infinite;
   pointer-events: none;
 }
-
 
 @keyframes fudge {
   from {
@@ -243,7 +259,7 @@ background: var(--background-minimal);
 }
 
 .subtitle.showcase {
-  font-family: 'Hurmit-Nerd', monospace;
+  font-family: "Hurmit-Nerd", monospace;
   font-weight: bold;
   font-size: 1.2vw;
   color: #ff007c;
@@ -254,20 +270,20 @@ background: var(--background-minimal);
 }
 
 .subtitle.minimal {
-  font-family: 'EB Garamond', serif, 'Hurmit-Nerd', monospace;
+  font-family: "EB Garamond", "Hurmit-Nerd", serif;
   font-weight: bold;
   font-size: 1.2vw;
-  color: 	#6E7B58;
+  color: #6e7b58;
   text-transform: uppercase;
   letter-spacing: 0.5em;
-  left: 17%; 
+  left: 17%;
 }
 
 @keyframes glitch-2 {
-  1%{
+  1% {
     transform: rotateX(10deg) skewX(70deg);
   }
-  2%{
+  2% {
     transform: rotateX(0deg) skewX(0deg);
   }
 }

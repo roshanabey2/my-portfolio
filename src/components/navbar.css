@@ -7,7 +7,9 @@
   /*background: #150964; */
   padding: 2px;
   border-radius: 50%;
-  transition: left 0.3s ease, right 0.3s ease;
+  transition:
+    left 0.3s ease,
+    right 0.3s ease;
 }
 
 .navbar-icon.open {
@@ -26,10 +28,10 @@
   opacity: 0.85;
   transform: translateY(-100%);
   font-size: 1vw;
-  font-family: 'Cartesian';
+  font-family: "Cartesian";
 
   /* animate both sliding & height */
-  transition: 
+  transition:
     transform 1s ease,
     max-height 1s ease;
   z-index: 999;
@@ -41,12 +43,12 @@
   width: 100%;
   max-height: 0;
   overflow: hidden;
-  background: #D88A4D;                
-  border-bottom: 1px solid #A29B81;
+  background: #d88a4d;
+  border-bottom: 1px solid #a29b81;
   opacity: 0.85;
   transform: translateY(-100%);
   font-size: 1vw;
-  font-family: 'Moetya', serif;
+  font-family: "Moetya", serif;
 
   transition:
     transform 1s ease,
@@ -57,8 +59,8 @@
 
 .navbar.open {
   height: 50px;
-  max-height: 500px;   /* slide‐down height */
-  transform: translateY(0);  /* slide in from left */
+  max-height: 500px; /* slide‐down height */
+  transform: translateY(0); /* slide in from left */
 }
 
 .navbar ul {
@@ -68,9 +70,8 @@
 }
 
 .navbar li {
-  border-bottom: 1px solid #bb9af7; 
+  border-bottom: 1px solid #bb9af7;
 }
-
 
 .navbar.showcase li a {
   color: #4fd6be;
@@ -80,7 +81,7 @@
 }
 
 .navbar.minimal li a {
-  color: #4E443F;
+  color: #4e443f;
   text-decoration: none;
   display: block;
   padding: 10px;
@@ -91,7 +92,5 @@
 }
 
 .navbar.minimal li a:hover {
-  color: #41a6b5;
+  color: #8a5524;
 }
-
-
