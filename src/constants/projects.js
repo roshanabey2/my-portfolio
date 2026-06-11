@@ -13,7 +13,7 @@ export const PROJECTS = [
     tech: "Ruby on Rails",
   },
   {
-    title: "Villanous Villas",
+    title: "Villainous Villas",
     images: {
       cover: "/screenshots/villanousVillas/VVhp.png",
       listing: "/screenshots/villanousVillas/VV1.png",
@@ -21,7 +21,7 @@ export const PROJECTS = [
     },
     description:
       "A themed rental platform that allows users to browse and book villain-inspired hideouts. A fanciful spin on your standard AirBnB clone.  Built with Ruby on Rails, JavaScript, and StimulusJS, it features dynamic property listings, a seamless booking system, and an intuitive UI for both guests and hosts.",
-    link: "https://github.com/RooOliver-Weaver/quest_odyssey",
+    link: null,
     status: "complete",
     tech: "Ruby on Rails",
   },

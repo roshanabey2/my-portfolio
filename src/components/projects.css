@@ -212,6 +212,25 @@
   line-height: 1.65;
 }
 
+.project-link-unavailable {
+  margin-top: auto;
+  font-size: 0.9rem;
+  opacity: 0.72;
+}
+
+.project-link-unavailable.showcase {
+  color: #7dcfff;
+  font-family: "Hurmit-Nerd", monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-link-unavailable.minimal {
+  color: #6e7b58;
+  font-family: var(--font-minimal);
+  font-style: italic;
+}
+
 .skilltag.showcase {
   display: inline-block;
 

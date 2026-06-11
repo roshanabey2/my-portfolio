@@ -66,14 +66,20 @@ function ProjectCard({ project, mode, index }) {
             <p className="project-command">~/projects/{project.title.toLowerCase().replaceAll(" ", "-")}</p>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <a
-              href={project.link}
-              className="links showcase"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-               View on GitHub
-            </a>
+            {project.link ? (
+              <a
+                href={project.link}
+                className="links showcase"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                 View on GitHub
+              </a>
+            ) : (
+              <span className="project-link-unavailable showcase">
+                repository unavailable
+              </span>
+            )}
           </div>
         </div>
       </article>
@@ -114,14 +120,20 @@ function ProjectCard({ project, mode, index }) {
       </div>
 
       <p className={`info_text mt-3 ${mode}`}>{project.description}</p>
-      <a
-        href={project.link}
-        className={`links ${mode} mt-auto inline-block`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-         View on GitHub
-      </a>
+      {project.link ? (
+        <a
+          href={project.link}
+          className={`links ${mode} mt-auto inline-block`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+           View on GitHub
+        </a>
+      ) : (
+        <span className={`project-link-unavailable ${mode}`}>
+          repository unavailable
+        </span>
+      )}
     </div>
   );
 }
