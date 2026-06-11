@@ -31,11 +31,14 @@ const Skills = () => {
       </h2>
 
       {mode === "minimal" ? (
-        <div className="minimal-skills-grid">
-          {Object.entries(groupedSkills).map(([group, groupSkills]) => (
-            <section key={group} className="minimal-skill-panel">
+        <div className="minimal-skill-index">
+          {Object.entries(groupedSkills).map(([group, groupSkills], index) => (
+            <section key={group} className="minimal-skill-row">
+              <span className="minimal-skill-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <h3>{group}</h3>
-              <div>
+              <div className="minimal-skill-list">
                 {groupSkills.map((skill) => (
                   <span key={skill.name} className="minimal-skill-pill">
                     <span>{skill.icon}</span>

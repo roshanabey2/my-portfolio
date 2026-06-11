@@ -83,6 +83,7 @@ function ProjectCard({ project, mode, index }) {
   return (
     <div
       className={`card ${mode}`}
+      data-index={String(index + 1).padStart(2, "0")}
       style={
         mode === "minimal"
           ? {

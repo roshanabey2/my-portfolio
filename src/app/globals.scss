@@ -549,7 +549,8 @@ body.minimal {
 .writing-card.minimal,
 .link-panel.minimal {
   background: #deddb8;
-  border: 3px solid #4e443f;
+  border: 1px solid rgba(78, 68, 63, 0.5);
+  border-radius: 0.2rem;
   color: #4e443f;
 }
 
@@ -571,8 +572,19 @@ body.minimal {
 
 .writing-card.minimal h2,
 .link-panel.minimal h2 {
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.35);
   color: #8a5524;
   font-family: "Moetya";
+}
+
+.writing-subheading {
+  margin-top: -0.4rem;
+  color: rgba(110, 123, 88, 0.82);
+  font-family: var(--font-minimal);
+  font-size: 0.92rem;
+  font-style: italic;
+  line-height: 1.35;
 }
 
 .writing-meta,
@@ -820,6 +832,164 @@ body.minimal {
   line-height: 1.65;
 }
 
+.minimal-about-page {
+  display: grid;
+  gap: 3rem;
+  min-height: 100vh;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.minimal-about-sheet {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid rgba(78, 68, 63, 0.32);
+  background:
+    linear-gradient(rgba(240, 234, 210, 0.76), rgba(240, 234, 210, 0.76)),
+    #deddb8;
+  color: #2e2c2a;
+}
+
+.minimal-about-title-block {
+  display: grid;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.minimal-about-title-block h1 {
+  color: #8a5524;
+  font-family: "Moetya";
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 0.95;
+}
+
+.minimal-about-title-block p:last-child {
+  color: #6e7b58;
+  font-family: var(--font-minimal);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.minimal-about-kicker {
+  color: #1b998b;
+  font-family: var(--font-minimal);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.minimal-about-rule {
+  width: min(100%, 520px);
+  height: 1px;
+  margin: 2rem auto;
+  background: rgba(78, 68, 63, 0.4);
+}
+
+.minimal-about-body {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.minimal-about-margin {
+  display: grid;
+  gap: 0.75rem;
+  padding-top: 0.35rem;
+  color: rgba(110, 123, 88, 0.82);
+  font-family: var(--font-minimal);
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.minimal-about-prose {
+  max-width: 660px;
+  font-family: var(--font-minimal);
+  font-size: 1.22rem;
+  line-height: 1.78;
+}
+
+.minimal-about-prose p + p {
+  margin-top: 1rem;
+}
+
+.minimal-about-drop::first-letter {
+  float: left;
+  margin: 0.1rem 0.45rem 0 0;
+  color: #8a5524;
+  font-family: "Moetya";
+  font-size: 4.2rem;
+  line-height: 0.82;
+}
+
+.minimal-about-prose blockquote {
+  margin-top: 1.6rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(110, 123, 88, 0.58);
+  color: #6e7b58;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.minimal-about-index {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.minimal-about-index header {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.minimal-about-index header p {
+  color: #1b998b;
+  font-family: var(--font-minimal);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.minimal-about-index h2 {
+  color: #8a5524;
+  font-family: "Moetya";
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+}
+
+.minimal-about-index > div {
+  display: grid;
+  border-top: 2px solid #4e443f;
+}
+
+.minimal-about-row {
+  display: grid;
+  grid-template-columns: 3.5rem 14rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(78, 68, 63, 0.45);
+}
+
+.minimal-about-row span {
+  color: #6e7b58;
+  font-family: "Hurmit-Nerd", monospace;
+  font-size: 0.85rem;
+}
+
+.minimal-about-row h3 {
+  color: #8a5524;
+  font-family: "Moetya";
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.minimal-about-row p {
+  color: #2e2c2a;
+  font-family: var(--font-minimal);
+  line-height: 1.6;
+}
+
 @media (max-width: 760px) {
   .showcase-hero,
   .minimal-hero {
@@ -864,5 +1034,16 @@ body.minimal {
 
   .about-photo-frame {
     max-width: 320px;
+  }
+
+  .minimal-about-body,
+  .minimal-about-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .minimal-about-margin {
+    border-left: 2px solid rgba(110, 123, 88, 0.38);
+    padding-left: 1rem;
   }
 }

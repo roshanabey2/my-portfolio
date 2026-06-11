@@ -61,6 +61,11 @@ export default function WritingsPage() {
               {source === "substack" && <span>Substack</span>}
             </div>
             <h2>{post.title}</h2>
+            {mode === "minimal" && (
+              <p className="writing-subheading">
+                {source === "substack" ? "Published essay" : "Notebook draft"} · {post.date || "undated"}
+              </p>
+            )}
             <p>{post.excerpt}</p>
             <div className="writing-footer">
               <div className="writing-tags">

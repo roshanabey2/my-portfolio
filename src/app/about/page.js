@@ -4,7 +4,6 @@ import { useMode } from "@/context/ModeContext";
 
 export default function AboutPage() {
   const { mode } = useMode();
-
   const principles = [
     {
       title: "Small, clear surfaces",
@@ -19,6 +18,10 @@ export default function AboutPage() {
       text: "A product should feel calm to use. I care about visual detail when it helps people scan, trust, and complete their work faster.",
     },
   ];
+
+  if (mode === "minimal") {
+    return <MinimalAboutPage principles={principles} />;
+  }
 
   return (
     <section className={`page-shell about-page ${mode}`}>
@@ -63,6 +66,65 @@ export default function AboutPage() {
         <div className="about-principles">
           {principles.map((principle) => (
             <section key={principle.title} className={`about-card ${mode}`}>
+              <h3>{principle.title}</h3>
+              <p>{principle.text}</p>
+            </section>
+          ))}
+        </div>
+      </article>
+    </section>
+  );
+}
+
+function MinimalAboutPage({ principles }) {
+  return (
+    <section className="minimal-about-page">
+      <article className="minimal-about-sheet">
+        <header className="minimal-about-title-block">
+          <p className="minimal-about-kicker">A short note</p>
+          <h1>About Me</h1>
+          <p>Roshan Abeysekera</p>
+        </header>
+
+        <div className="minimal-about-rule" />
+
+        <div className="minimal-about-body">
+          <aside className="minimal-about-margin">
+            <span>full-stack developer</span>
+            <span>software engineer</span>
+            <span>systems-minded builder</span>
+          </aside>
+
+          <div className="minimal-about-prose">
+            <p className="minimal-about-drop">
+              I build practical web applications with a back-end leaning brain
+              and a front-end eye for clarity.
+            </p>
+            <p>
+              I like software that feels calm to use and straightforward to
+              maintain. My strongest work sits where product thinking, system
+              design, and implementation detail meet: shaping small MVPs,
+              making data flows understandable, and polishing the parts users
+              touch every day.
+            </p>
+            <blockquote>
+              Good software should leave the next person with fewer mysteries,
+              not more.
+            </blockquote>
+          </div>
+        </div>
+      </article>
+
+      <article className="minimal-about-index">
+        <header>
+          <p>Working principles</p>
+          <h2>How I Work</h2>
+        </header>
+
+        <div>
+          {principles.map((principle, index) => (
+            <section key={principle.title} className="minimal-about-row">
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{principle.title}</h3>
               <p>{principle.text}</p>
             </section>
