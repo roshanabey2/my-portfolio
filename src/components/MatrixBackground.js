@@ -65,26 +65,39 @@ function MatrixBackground({ textColour, backgroundColour, alphaBackgroundColour,
   }, [alphaBackgroundColour, textColour, font, textColumnWidth]);
 
   useEffect(() => {
-    const defaultYPositions = initializeMatrixCanvas();
+    let timeoutId;
+    let isMounted = true;
 
     window.addEventListener('resize', initializeMatrixCanvas);
     window.addEventListener('orientationchange', initializeMatrixCanvas);
 
     const animate = (yPositions) => {
-      if (shouldReduceMotion) return;
+      if (shouldReduceMotion || !isMounted) return;
       const newYPositions = drawMatrix(yPositions);
 
       if (!newYPositions) return;
 
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         animate(newYPositions);
       }, 1000 / fps);
     };
 
-    if (defaultYPositions) animate(defaultYPositions);
-    console.log('Matrix effect mounted');
+    const startMatrix = async () => {
+      if (document.fonts?.ready) {
+        await document.fonts.ready;
+      }
+
+      if (!isMounted) return;
+
+      const defaultYPositions = initializeMatrixCanvas();
+      if (defaultYPositions) animate(defaultYPositions);
+    };
+
+    startMatrix();
 
     return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
       window.removeEventListener('resize', initializeMatrixCanvas);
       window.removeEventListener('orientationchange', initializeMatrixCanvas);
     };

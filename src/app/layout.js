@@ -14,7 +14,7 @@ function AppLayout({ children }) {
           textColour={"#9d7cd8"}
           backgroundColour={"var(--color-background)"}
           alphaBackgroundColour="rgba(36,40,59,0.05)"
-          font={"var(--font-matrix)"}
+          font={"16px ShureTech-Mono"}
           textColumnWidth={20}
           fps={20}
         />
@@ -41,4 +41,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
