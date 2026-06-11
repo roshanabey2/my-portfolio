@@ -1,13 +1,11 @@
-'use client'
+"use client";
 import { useMode } from "@/context/ModeContext";
-import { useRouter } from 'next/navigation';
-import { useEffect } from "react"
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
-
-
 
 export default function Home() {
   const { mode, isLoading } = useMode();
@@ -15,17 +13,15 @@ export default function Home() {
 
   useEffect(() => {
     if (isLoading || !mode) {
-      router.push('/splash'); // ⬅️ Redirect to /splash route
+      router.push("/splash"); // ⬅️ Redirect to /splash route
     }
   }, [isLoading, mode, router]);
 
   // Optional: return null while redirecting to avoid flicker
   if (isLoading || !mode) return null;
 
-
   return (
-
-    <div >
+    <div>
       <Hero />
       <Projects />
       <Skills />

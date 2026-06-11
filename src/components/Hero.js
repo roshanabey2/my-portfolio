@@ -21,7 +21,7 @@ const Hero = () => {
 
         <br />
 
-        <div className={`subtitle ${mode} `}>
+        <div className={`subtitle ${mode}`}>
           Full-Stack Developer and Software Engineer | Portfolio 2025
         </div>
 
