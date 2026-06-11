@@ -94,3 +94,26 @@
 .navbar.minimal li a:hover {
   color: #8a5524;
 }
+
+.mode-toggle {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.mode-toggle.showcase {
+  color: #7dcfff;
+}
+
+.mode-toggle.minimal {
+  color: #4e443f;
+}
+
+.mode-toggle:hover {
+  color: #ff007c;
+}
+
+.mode-toggle.minimal:hover {
+  color: #8a5524;
+}

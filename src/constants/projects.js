@@ -2,7 +2,9 @@ export const PROJECTS = [
   {
     title: "Quest Odyssey",
     images: {
-      cover: null,
+      cover: "/screenshots/questOdysssey/quest-cover.png",
+      dashboard: "/screenshots/questOdysssey/QO1.png",
+      campaign: "/screenshots/questOdysssey/QO4.png",
     },
     description:
       "A TTRPG Scheduling Application that allows users to create, join, organise and track sessions of their own table-top campaigns with other players ",
@@ -13,7 +15,9 @@ export const PROJECTS = [
   {
     title: "Villanous Villas",
     images: {
-      cover: null,
+      cover: "/screenshots/villanousVillas/VVhp.png",
+      listing: "/screenshots/villanousVillas/VV1.png",
+      booking: "/screenshots/villanousVillas/VV5.png",
     },
     description:
       "A themed rental platform that allows users to browse and book villain-inspired hideouts. A fanciful spin on your standard AirBnB clone.  Built with Ruby on Rails, JavaScript, and StimulusJS, it features dynamic property listings, a seamless booking system, and an intuitive UI for both guests and hosts.",

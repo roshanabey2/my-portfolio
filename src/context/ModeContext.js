@@ -22,11 +22,10 @@ export const ModeProvider = ({ children }) => {
   }, [mode]);
 
   return (
-    <ModeContext.Provider value={{ mode, setMode }}>
+    <ModeContext.Provider value={{ mode, setMode, isLoading }}>
       {children}
     </ModeContext.Provider>
   );
 };
 
 export const useMode = () => useContext(ModeContext);
-

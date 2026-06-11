@@ -39,7 +39,7 @@ const Hero = () => {
             opacity={0.9}
             className="relative w-full h-full items-center overflow-hidden bg-[#24283b] rounded-3xl "
           >
-            <img
+            <Image
               src="/avatarsAndIcons/avatars/showcase_coding_panda.png"
               alt="My Logo"
               width={300}

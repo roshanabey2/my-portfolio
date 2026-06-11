@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Roshan Abeysekera Portfolio
+
+A Next.js portfolio site with two presentation modes:
+
+- `showcase`: glitch typography, matrix background, and cyber-styled cards.
+- `minimal`: quieter serif typography and warmer card styling.
+
+The selected mode is stored in `localStorage` as `siteMode`, so returning visitors keep the mode they chose on the splash screen.
+
+## Stack
+
+- Next.js 15 App Router
+- React 18
+- Tailwind CSS 4
+- Sass
+- Embla Carousel
+- Framer Motion
+- Playwright
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open `http://localhost:3000`.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn dev
+yarn build
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/app`: App Router pages and API routes.
+- `src/components`: Reusable page sections and UI components.
+- `src/context/ModeContext.js`: Global mode state and localStorage persistence.
+- `src/constants`: Project data, writing fallbacks, theme constants, and default assets.
+- `public`: Fonts, icons, avatars, and project screenshots.
 
-## Deploy on Vercel
+## Writings And Substack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The writings page works without external services by rendering local fallback posts from `src/constants/writings.js`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+It can also consume a future Substack publication through RSS. Set this environment variable:
+
+```bash
+SUBSTACK_RSS_URL=https://your-publication.substack.com/feed
+```
+
+Then restart the server. The API route at `src/app/api/writings/route.js` will fetch the RSS feed, normalize recent posts, and fall back to local posts if the feed is unavailable.
+
+In production, the feed request is cached with a one-hour revalidation window.
+
+## Notes
+
+- `/splash` is the mode picker.
+- `/` renders the portfolio homepage.
+- `/about`, `/writings`, and `/links` are secondary pages.

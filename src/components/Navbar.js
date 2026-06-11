@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import './navbar.css'
@@ -7,7 +7,8 @@ import { useMode } from "@/context/ModeContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { mode } = useMode();
+  const { mode, setMode } = useMode();
+  const nextMode = mode === "minimal" ? "showcase" : "minimal";
 
 
   // Keep the ref in sync with state
@@ -49,10 +50,8 @@ const Navbar = () => {
         onClick={() => setIsOpen(open => !open)}
         src={
           mode === "minimal"
-            ? "/minimal__panda_icon.png"
-            : mode === "showcase"
-              ? "/showcase_panda_icon.jpg"
-              : "/dark_panda_icon.png"}
+            ? "/avatarsAndIcons/icons/minimal_panda_icon.png"
+            : "/avatarsAndIcons/icons/showcase_panda_icon.png"}
         alt="icon"
         width={35}
         height={35}
@@ -75,6 +74,15 @@ const Navbar = () => {
             <li>
               <Link href="/links">Links</Link>
             </li>
+            <li>
+              <button
+                className={`mode-toggle ${mode}`}
+                type="button"
+                onClick={() => setMode(nextMode)}
+              >
+                {nextMode}
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
@@ -83,4 +91,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

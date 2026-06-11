@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section className={`p-6 text-center ${mode} `}>
       <h2 className={`component_name text-3xl font-bold mb-4 ${mode} `}>
-        Let's Connect{" "}
+        Let&apos;s Connect{" "}
       </h2>
       <p>
         Email me at{" "}

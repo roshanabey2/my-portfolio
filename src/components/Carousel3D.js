@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Carousel3D.css';
 import Image from 'next/image';
 
-const modes = ['showcase', 'minimal', 'dark'];
+const modes = ['showcase', 'minimal'];
 
 export default function Carousel3D({ onSelect }) {
   const [index, setIndex] = useState(1); // Start with Showcase
@@ -28,9 +28,7 @@ export default function Carousel3D({ onSelect }) {
                 src={
                   mode === "minimal"
                     ? "/avatarsAndIcons/icons/minimal_panda_icon.png"
-                    : mode === "showcase"
-                      ? "/avatarsAndIcons/icons/showcase_panda_icon.png"
-                      : "/avatarsAndIcons/icons/dark_panda_icon.png"}
+                    : "/avatarsAndIcons/icons/showcase_panda_icon.png"}
                 alt={`${mode} mode `}
                 width={85}
                 height={85}
@@ -56,4 +54,3 @@ export default function Carousel3D({ onSelect }) {
     </div>
   );
 }
-

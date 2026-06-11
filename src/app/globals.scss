@@ -297,3 +297,284 @@ body.minimal {
   flex: 0 0 100%;
   min-width: 0;
 }
+
+.page-shell {
+  min-height: 100vh;
+  padding: 6rem 1.5rem 3rem;
+}
+
+.page-header {
+  max-width: 860px;
+  margin: 0 auto 3rem;
+}
+
+.writing-intro {
+  margin-top: 1rem;
+  max-width: 720px;
+  line-height: 1.7;
+}
+
+.writing-intro.showcase {
+  color: #4fd6be;
+  font-family: "Hurmit-Nerd", monospace;
+}
+
+.writing-intro.minimal {
+  color: #2e2c2a;
+  font-family: var(--font-minimal);
+  font-size: 1.15rem;
+}
+
+.writing-grid,
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.writing-card,
+.link-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.writing-card.showcase,
+.link-panel.showcase {
+  background: rgba(84, 92, 126, 0.88);
+  border: 1px solid rgba(187, 154, 247, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: #c0caf5;
+}
+
+.writing-card.minimal,
+.link-panel.minimal {
+  background: #deddb8;
+  border: 3px solid #4e443f;
+  color: #4e443f;
+}
+
+.writing-card h2,
+.link-panel h2 {
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.writing-card p {
+  line-height: 1.65;
+}
+
+.writing-card.showcase h2,
+.link-panel.showcase h2 {
+  color: #ff9e64;
+  font-family: "Cartesian";
+}
+
+.writing-card.minimal h2,
+.link-panel.minimal h2 {
+  color: #8a5524;
+  font-family: "Moetya";
+}
+
+.writing-meta,
+.writing-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.writing-meta {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.writing-footer {
+  margin-top: auto;
+}
+
+.writing-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.writing-tags span {
+  padding: 0.2rem 0.45rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.link-panel ul {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.about-page {
+  display: grid;
+  gap: 3rem;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-kicker {
+  width: fit-content;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.about-kicker.showcase {
+  color: #7dcfff;
+  font-family: "Hurmit-Nerd", monospace;
+}
+
+.about-kicker.minimal {
+  color: #6e7b58;
+  font-family: var(--font-minimal);
+}
+
+.about-title {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+}
+
+.about-lede,
+.about-body {
+  max-width: 720px;
+  line-height: 1.7;
+}
+
+.about-lede {
+  font-size: 1.25rem;
+}
+
+.about-lede.showcase {
+  color: #4fd6be;
+  font-family: "Hurmit-Nerd", monospace;
+}
+
+.about-body.showcase {
+  color: #c0caf5;
+  font-family: "Hurmit-Nerd", monospace;
+}
+
+.about-lede.minimal,
+.about-body.minimal {
+  color: #2e2c2a;
+  font-family: var(--font-minimal);
+}
+
+.about-photo-frame {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  aspect-ratio: 1;
+}
+
+.about-photo-frame.showcase {
+  border: 1px solid rgba(187, 154, 247, 0.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.about-photo-frame.minimal {
+  border: 3px solid #4e443f;
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-section {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-section-header {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 760px;
+}
+
+.about-section-header h2 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.about-principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.about-card {
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.about-card.showcase {
+  background: rgba(84, 92, 126, 0.88);
+  border: 1px solid rgba(187, 154, 247, 0.35);
+  color: #c0caf5;
+}
+
+.about-card.minimal {
+  background: #deddb8;
+  border: 3px solid #4e443f;
+  color: #4e443f;
+}
+
+.about-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.about-card.showcase h3 {
+  color: #ff9e64;
+  font-family: "Cartesian";
+}
+
+.about-card.minimal h3 {
+  color: #8a5524;
+  font-family: "Moetya";
+}
+
+.about-card p {
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo-frame {
+    max-width: 320px;
+  }
+}
