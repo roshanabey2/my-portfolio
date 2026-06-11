@@ -2,43 +2,66 @@ import { useMode } from "@/context/ModeContext";
 import "./projects.css";
 
 const skills = [
-  " JavaScript",
-  " React",
-  "󰫏 Ruby on Rails",
-  " PostgreSQL",
-  " C",
-  " Git",
-  " Neovim",
-  " Linux",
-  " Python",
-  " Docker",
-  " Heroku",
+  { name: "JavaScript", icon: "", group: "Frontend" },
+  { name: "React", icon: "", group: "Frontend" },
+  { name: "Ruby on Rails", icon: "󰫏", group: "Backend" },
+  { name: "PostgreSQL", icon: "", group: "Backend" },
+  { name: "C", icon: "", group: "Systems" },
+  { name: "Git", icon: "", group: "Tools" },
+  { name: "Neovim", icon: "", group: "Tools" },
+  { name: "Linux", icon: "", group: "Systems" },
+  { name: "Python", icon: "", group: "Backend" },
+  { name: "Docker", icon: "", group: "Tools" },
+  { name: "Heroku", icon: "", group: "Deployment" },
 ];
 
 const Skills = () => {
   const { mode } = useMode();
+  const groupedSkills = skills.reduce((groups, skill) => {
+    groups[skill.group] = [...(groups[skill.group] || []), skill];
+    return groups;
+  }, {});
+
   return (
-    <section className="p-6">
+    <section className={`skills-section ${mode}`}>
       <h2
         className={`component_name text-4xl font-bold mb-4 text-center ${mode}`}
       >
         Skills
       </h2>
-      <div className="overflow-hidden w-full relative">
-        <div className="animate-scroll whitespace-nowrap flex gap-6">
-          {skills.map((skill, index) => (
-            <span key={index} className={`skilltag ${mode}`}>
-              {skill}
-            </span>
-          ))}
-          {/* duplicate to create seamless loop */}
-          {skills.map((skill, index) => (
-            <span key={`duplicate-${index}`} className={`skilltag ${mode}`}>
-              {skill}
-            </span>
+
+      {mode === "minimal" ? (
+        <div className="minimal-skills-grid">
+          {Object.entries(groupedSkills).map(([group, groupSkills]) => (
+            <section key={group} className="minimal-skill-panel">
+              <h3>{group}</h3>
+              <div>
+                {groupSkills.map((skill) => (
+                  <span key={skill.name} className="minimal-skill-pill">
+                    <span>{skill.icon}</span>
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
-      </div>
+      ) : (
+        <div className="overflow-hidden w-full relative">
+          <div className="animate-scroll whitespace-nowrap flex gap-6">
+            {skills.map((skill) => (
+              <span key={skill.name} className={`skilltag ${mode}`}>
+                {skill.icon} {skill.name}
+              </span>
+            ))}
+            {skills.map((skill) => (
+              <span key={`duplicate-${skill.name}`} className={`skilltag ${mode}`}>
+                {skill.icon} {skill.name}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -258,6 +258,189 @@ body.minimal {
   top: 0;
 }
 
+.showcase-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  align-items: center;
+  gap: 2rem;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 7rem 1.5rem 4rem;
+}
+
+.showcase-hero-copy {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.showcase-hero .glitch {
+  margin: 0;
+  font-size: clamp(4rem, 9vw, 8.5rem);
+  line-height: 0.9;
+}
+
+.showcase-hero .glow {
+  font-size: clamp(4rem, 9vw, 8.5rem);
+  line-height: 0.9;
+}
+
+.showcase-hero-subtitle {
+  color: #ff007c;
+  font-family: "Hurmit-Nerd", monospace;
+  font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.showcase-hero-body {
+  max-width: 650px;
+  color: #4fd6be;
+  font-family: "Hurmit-Nerd", monospace;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.showcase-status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 650px;
+}
+
+.showcase-status-grid div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(125, 207, 255, 0.35);
+  background: rgba(36, 40, 59, 0.72);
+  box-shadow: inset 0 0 18px rgba(157, 124, 216, 0.12);
+}
+
+.showcase-status-grid span,
+.showcase-panel-bar,
+.showcase-panel-footer {
+  color: #7dcfff;
+  font-family: "Hurmit-Nerd", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.showcase-status-grid strong {
+  color: #ff9e64;
+  font-family: "Cartesian";
+  font-size: 1rem;
+}
+
+.showcase-avatar-panel {
+  position: relative;
+  overflow: hidden;
+  align-self: center;
+  border: 1px solid rgba(187, 154, 247, 0.55);
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(180deg, rgba(57, 75, 112, 0.95), rgba(36, 40, 59, 0.94)),
+    #24283b;
+  box-shadow:
+    0 0 0 1px rgba(79, 214, 190, 0.08),
+    0 24px 60px rgba(0, 0, 0, 0.36),
+    0 0 42px rgba(157, 124, 216, 0.18);
+}
+
+.showcase-avatar-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 3px
+  );
+  mix-blend-mode: screen;
+}
+
+.showcase-panel-bar,
+.showcase-panel-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(36, 40, 59, 0.9);
+  border-bottom: 1px solid rgba(187, 154, 247, 0.35);
+}
+
+.showcase-panel-footer {
+  border-top: 1px solid rgba(187, 154, 247, 0.35);
+  border-bottom: 0;
+}
+
+.showcase-avatar-screen {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  padding: 1rem;
+}
+
+.showcase-avatar-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.35rem;
+  filter: saturate(1.18) contrast(1.05);
+}
+
+.minimal-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 7rem 1.5rem 4rem;
+}
+
+.minimal-hero-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.minimal-hero-title {
+  font-size: clamp(4rem, 9vw, 7rem);
+  line-height: 0.95;
+}
+
+.minimal-hero-subtitle {
+  color: #6e7b58;
+  font-family: var(--font-minimal);
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.minimal-hero-body {
+  max-width: 620px;
+  color: #2e2c2a;
+  font-family: var(--font-minimal);
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.minimal-hero-image {
+  overflow: hidden;
+  border: 3px solid #4e443f;
+  border-radius: 0.5rem;
+  background: #deddb8;
+}
+
+.minimal-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .subtitle.showcase {
   font-family: "Hurmit-Nerd", monospace;
   font-weight: bold;
@@ -332,6 +515,17 @@ body.minimal {
   gap: 1.25rem;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.writing-grid.minimal {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  gap: 1.25rem 2rem;
+}
+
+.writing-grid.minimal > .writing-card {
+  grid-column: var(--item-column);
+  grid-row: var(--item-row);
 }
 
 .writing-card,
@@ -415,6 +609,63 @@ body.minimal {
 .link-panel ul {
   display: grid;
   gap: 0.75rem;
+}
+
+.minimal-link-index {
+  display: grid;
+  max-width: 920px;
+  margin: 0 auto;
+  border-top: 2px solid #4e443f;
+}
+
+.minimal-link-row {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) max-content;
+  gap: 1.25rem;
+  align-items: baseline;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(78, 68, 63, 0.45);
+  color: #2e2c2a;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    padding-left 160ms ease;
+}
+
+.minimal-link-row:hover {
+  color: #8a5524;
+  padding-left: 0.5rem;
+}
+
+.minimal-link-number {
+  color: #6e7b58;
+  font-family: "Hurmit-Nerd", monospace;
+  font-size: 0.85rem;
+}
+
+.minimal-link-main {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.minimal-link-title {
+  color: #8a5524;
+  font-family: "Moetya";
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.minimal-link-description {
+  max-width: 620px;
+  font-family: var(--font-minimal);
+  line-height: 1.55;
+}
+
+.minimal-link-group {
+  color: #1b998b;
+  font-family: var(--font-minimal);
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .about-page {
@@ -570,6 +821,43 @@ body.minimal {
 }
 
 @media (max-width: 760px) {
+  .showcase-hero,
+  .minimal-hero {
+    grid-template-columns: 1fr;
+    padding-top: 6rem;
+  }
+
+  .showcase-status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-avatar-panel,
+  .minimal-hero-image {
+    width: min(100%, 360px);
+  }
+
+  .showcase-hero-subtitle,
+  .showcase-hero-body {
+    letter-spacing: 0.08em;
+  }
+
+  .writing-grid.minimal {
+    grid-template-columns: 1fr;
+  }
+
+  .writing-grid.minimal > .writing-card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .minimal-link-row {
+    grid-template-columns: 2.5rem 1fr;
+  }
+
+  .minimal-link-group {
+    grid-column: 2;
+  }
+
   .about-hero {
     grid-template-columns: 1fr;
   }

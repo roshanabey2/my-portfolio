@@ -15,35 +15,92 @@ const Projects = () => {
       >
         Projects
       </h2>
-      <div className="grid gap-6 md:grid-cols-2">
-        {PROJECTS.map((proj) => (
-          <ProjectCard key={proj.title} project={proj} mode={mode} />
+      <div className={`projects-grid ${mode}`}>
+        {PROJECTS.map((proj, index) => (
+          <ProjectCard
+            key={proj.title}
+            project={proj}
+            mode={mode}
+            index={index}
+          />
         ))}
       </div>
     </section>
   );
 };
 
-function ProjectCard({ project, mode }) {
+function ProjectCard({ project, mode, index }) {
   const [emblaRef] = useEmblaCarousel();
   const images = Object.entries(project.images);
   const slides = images.length > 0 ? images : [["cover", null]];
+  const resolvedSlides = slides.map(([key, src]) => [
+    key,
+    key === "cover" && (src === null || src === undefined)
+      ? DEFAULT_COVERS[mode] || DEFAULT_COVERS.showcase
+      : src,
+  ]);
+
+  if (mode === "showcase") {
+    return (
+      <article className="project-console">
+        <div className="project-console-bar">
+          <span>{project.status}</span>
+          <span>{project.tech}</span>
+        </div>
+
+        <div className="project-console-body">
+          <div className="project-preview-stack">
+            {resolvedSlides.slice(0, 3).map(([key, src], index) => (
+              <Image
+                key={key}
+                src={src}
+                alt={`${project.title}: ${key}`}
+                width={420}
+                height={300}
+                style={{ "--stack-index": index }}
+              />
+            ))}
+          </div>
+
+          <div className="project-console-copy">
+            <p className="project-command">~/projects/{project.title.toLowerCase().replaceAll(" ", "-")}</p>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <a
+              href={project.link}
+              className="links showcase"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+               View on GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+    );
+  }
 
   return (
-    <div className={`card ${mode}`}>
+    <div
+      className={`card ${mode}`}
+      style={
+        mode === "minimal"
+          ? {
+              "--item-column": (index % 2) + 1,
+              "--item-row": index + 1,
+            }
+          : undefined
+      }
+    >
       <h3 className="text-xl font-bold mb-3">{project.title}</h3>
 
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map(([key, src]) => {
-            const resolvedSrc =
-              key === "cover" && (src === null || src === undefined)
-                ? DEFAULT_COVERS[mode] || DEFAULT_COVERS.showcase
-                : src;
+          {resolvedSlides.map(([key, src]) => {
             return (
               <div className="embla__slide" key={key}>
                 <Image
-                  src={resolvedSrc}
+                  src={src}
                   alt={`${project.title}: ${key}`}
                   width={800}
                   height={600}

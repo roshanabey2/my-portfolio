@@ -42,9 +42,20 @@ export default function WritingsPage() {
         </p>
       </header>
 
-      <div className="writing-grid">
-        {posts.map((post) => (
-          <article key={`${post.title}-${post.date}`} className={`writing-card ${mode}`}>
+      <div className={`writing-grid ${mode}`}>
+        {posts.map((post, index) => (
+          <article
+            key={`${post.title}-${post.date}`}
+            className={`writing-card ${mode}`}
+            style={
+              mode === "minimal"
+                ? {
+                    "--item-column": (index % 2) + 1,
+                    "--item-row": index + 1,
+                  }
+                : undefined
+            }
+          >
             <div className="writing-meta">
               <time dateTime={post.date}>{post.date || "Draft"}</time>
               {source === "substack" && <span>Substack</span>}

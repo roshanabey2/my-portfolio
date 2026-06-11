@@ -1,87 +1,100 @@
-import ImageGlow from "react-image-glow";
 import { useMode } from "@/context/ModeContext";
 import Image from "next/image";
 
 const Hero = () => {
   const { mode } = useMode();
+  if (mode === "showcase") return <ShowcaseHero />;
+  return <MinimalHero mode={mode} />;
+};
+
+function ShowcaseHero() {
   return (
-    <section className="min-h-screen flex flex-row justify-center items-center text-left p-6 m-6">
-      <div className=" relative flex flex-col justify-start p-3">
-        <div className={`${mode !== "showcase" ? "hidden" : ""}`}>
+    <section className="showcase-hero">
+      <div className="showcase-hero-copy">
+        <div>
           <div className="glitch" data-text="Roshan Abeysekera">
-            Roshan Abeysekera{" "}
+            Roshan Abeysekera
           </div>
           <div className="glow">Roshan Abeysekera</div>
         </div>
-        {mode !== "showcase" && (
-          <h1 className={`component_name text-9xl ${mode}`}>
-            Roshan Abeysekera
-          </h1>
-        )}
 
-        <br />
+        <p className="showcase-hero-subtitle">
+          Full-stack developer and software engineer
+        </p>
 
-        <div className={`subtitle ${mode}`}>
-          Full-Stack Developer and Software Engineer | Portfolio 2025
-        </div>
-
-        <div className={`info_text ${mode} mt-6`}>
+        <p className="showcase-hero-body">
           I build thoughtful software with an eye for performance and clarity.
           Currently tinkering with AI-assisted tools and low-level systems.
+        </p>
+
+        <div className="showcase-status-grid">
+          <div>
+            <span>MODE</span>
+            <strong>SHOWCASE</strong>
+          </div>
+          <div>
+            <span>FOCUS</span>
+            <strong>AI TOOLS</strong>
+          </div>
+          <div>
+            <span>STACK</span>
+            <strong>RAILS / REACT</strong>
+          </div>
         </div>
       </div>
 
-      <div className="hidden md:block opacity-90 items-center transform-none p-3">
-        <div className={`${mode !== "showcase" ? "hidden" : ""}`}>
-          <ImageGlow
-            radius={20}
-            saturation={1.5}
-            opacity={0.9}
-            className="relative w-full h-full items-center overflow-hidden bg-[#24283b] rounded-3xl "
-          >
-            <Image
-              src="/avatarsAndIcons/avatars/showcase_coding_panda.png"
-              alt="My Logo"
-              width={300}
-              height={600}
-              style={{ objectFit: "cover", width: "100%", height: "full" }}
-              className="w-full h-auto opacity-90"
-            />
-          </ImageGlow>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              maskImage:
-                "radial-gradient(ellipse at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
-              WebkitMaskImage:
-                "radial-gradient(ellipse at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
-            }}
-          ></div>
+      <aside className="showcase-avatar-panel" aria-label="profile visual">
+        <div className="showcase-panel-bar">
+          <span>avatar.render</span>
+          <span>online</span>
         </div>
-
-        <div className={`${mode !== "minimal" ? "hidden" : ""}`}>
+        <div className="showcase-avatar-screen">
           <Image
-            opacity={0.9}
-            className="relative w-full h-full items-center overflow-hidden bg-[#24283b] rounded-3xl "
-            src="/avatarsAndIcons/avatars/minimal_coding_panda.png"
-            alt="My Logo"
-            width={300}
-            height={900}
-            style={{ objectFit: "cover", width: "100%", height: "full" }}
+            src="/avatarsAndIcons/avatars/showcase_coding_panda.png"
+            alt="Coding panda avatar"
+            width={520}
+            height={680}
+            priority
           />
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              maskImage:
-                "radial-gradient(ellipse at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
-              WebkitMaskImage:
-                "radial-gradient(ellipse at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
-            }}
-          ></div>
         </div>
+        <div className="showcase-panel-footer">
+          <span>signal: stable</span>
+          <span>fps: 20</span>
+        </div>
+      </aside>
+    </section>
+  );
+}
+
+function MinimalHero({ mode }) {
+  return (
+    <section className="minimal-hero">
+      <div className="minimal-hero-copy">
+        <h1 className={`component_name minimal-hero-title ${mode}`}>
+          Roshan Abeysekera
+        </h1>
+
+        <p className={`minimal-hero-subtitle ${mode}`}>
+          Full-stack developer and software engineer
+        </p>
+
+        <p className={`minimal-hero-body ${mode}`}>
+          I build thoughtful software with an eye for performance and clarity.
+          Currently tinkering with AI-assisted tools and low-level systems.
+        </p>
+      </div>
+
+      <div className="minimal-hero-image">
+        <Image
+          src="/avatarsAndIcons/avatars/minimal_coding_panda.png"
+          alt="Coding panda avatar"
+          width={420}
+          height={520}
+          priority
+        />
       </div>
     </section>
   );
-};
+}
 
 export default Hero;
