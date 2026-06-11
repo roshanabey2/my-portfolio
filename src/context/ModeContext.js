@@ -1,11 +1,16 @@
 'use client';
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 const ModeContext = createContext();
 
 export const ModeProvider = ({ children }) => {
   const [mode, setMode] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const clearMode = useCallback(() => {
+    setMode(null);
+    localStorage.removeItem('siteMode');
+  }, []);
 
   // Load from localStorage on client only
   useEffect(() => {
@@ -22,7 +27,7 @@ export const ModeProvider = ({ children }) => {
   }, [mode]);
 
   return (
-    <ModeContext.Provider value={{ mode, setMode, isLoading }}>
+    <ModeContext.Provider value={{ mode, setMode, clearMode, isLoading }}>
       {children}
     </ModeContext.Provider>
   );

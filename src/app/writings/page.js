@@ -56,10 +56,12 @@ export default function WritingsPage() {
                 : undefined
             }
           >
-            <div className="writing-meta">
-              <time dateTime={post.date}>{post.date || "Draft"}</time>
-              {source === "substack" && <span>Substack</span>}
-            </div>
+            {mode !== "minimal" && (
+              <div className="writing-meta">
+                <time dateTime={post.date}>{post.date || "Draft"}</time>
+                {source === "substack" && <span>Substack</span>}
+              </div>
+            )}
             <h2>{post.title}</h2>
             {mode === "minimal" && (
               <p className="writing-subheading">
