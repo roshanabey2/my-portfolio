@@ -110,6 +110,8 @@ body.minimal {
 }
 
 .splash-page {
+  position: relative;
+  overflow: hidden;
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(180px, 260px) minmax(180px, 280px) minmax(180px, 260px);
@@ -120,6 +122,141 @@ body.minimal {
   background: #d0d058;
   color: #405010;
   font-family: "Doto", monospace;
+}
+
+.gameboy-boot {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+  pointer-events: none;
+  background: #050604;
+  animation: gameboyBoot 3600ms steps(1, end) forwards;
+}
+
+.gameboy-boot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f0ead2;
+  opacity: 0;
+  animation: gameboyFlash 3600ms linear forwards;
+}
+
+.gameboy-boot span {
+  position: absolute;
+  left: 50%;
+  top: -20vh;
+  z-index: 1;
+  color: #405010;
+  font-family: "Doto", monospace;
+  font-size: clamp(2.25rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  text-shadow:
+    4px 0 0 #adc178,
+    0 4px 0 #adc178;
+  opacity: 0;
+  animation: gameboyWelcome 3600ms steps(20, end) forwards;
+}
+
+.splash-mode-button,
+.pixel-panda {
+  animation: splashPopIn 760ms steps(6, end) 3300ms both;
+}
+
+.pixel-panda {
+  animation-delay: 3200ms;
+}
+
+.splash-signature {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1rem;
+  color: rgba(64, 80, 16, 0.72);
+  font-family: "Doto", monospace;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: splashPopIn 760ms steps(6, end) 3500ms both;
+}
+
+@keyframes gameboyBoot {
+  0%,
+  18% {
+    opacity: 1;
+    background: #050604;
+  }
+  19%,
+  34% {
+    opacity: 1;
+    background: #f0ead2;
+  }
+  35%,
+  92% {
+    opacity: 1;
+    background: #d0d058;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes gameboyFlash {
+  0%,
+  18% {
+    opacity: 0;
+  }
+  24% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes gameboyWelcome {
+  0%,
+  34% {
+    opacity: 0;
+    top: -20vh;
+  }
+  35% {
+    opacity: 1;
+    top: -20vh;
+  }
+  78% {
+    opacity: 1;
+    top: 50%;
+  }
+  90% {
+    opacity: 1;
+    top: 50%;
+  }
+  96%,
+  100% {
+    opacity: 0;
+    top: 50%;
+  }
+}
+
+@keyframes splashPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .splash-mode-button {

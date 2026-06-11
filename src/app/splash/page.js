@@ -39,6 +39,9 @@ export default function SplashPage() {
         "--eye-y": `${eyeOffset.y}px`,
       }}
     >
+      <div className="gameboy-boot" aria-hidden="true">
+        <span>WELCOME</span>
+      </div>
       <button
         className="splash-mode-button splash-mode-showcase"
         type="button"
@@ -84,6 +87,7 @@ export default function SplashPage() {
         <small>serif / calm / bookish</small>
       </button>
 
+      <div className="splash-signature">@ Roshan Abeysekera</div>
       <div className="scanlines" />
     </main>
   );
